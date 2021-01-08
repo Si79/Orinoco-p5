@@ -24,11 +24,11 @@ xhr.onreadystatechange = function(){
             // On ajout notre balise <li> à la balise <ul> précédemment créee
             ul.appendChild(li)
         }
-
         //On ajoute l'intégralité du ul au body du html
         body.appendChild(ul)
     }
 }
+
 
 
 
