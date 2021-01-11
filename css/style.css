@@ -27,3 +27,9 @@ button.message{
     bottom: 0;
     width: 100%;
   }
+
+  /*Product cards */
+  .product-card img{
+      width: 200px;
+      height: auto;
+  }
