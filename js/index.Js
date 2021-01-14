@@ -15,7 +15,7 @@ xhr.onreadystatechange = function(){
         // 2. i < products.length: On itère sur le tableau jusqu'à la fin (tant que i < 4)
         // 3. i++ : A chaque itération, on incrémente i de 1
         for(let i = 0; i < products.length; i++){
-            // On crée un balise html de type <li> dans laquelle on va lui insérer une balise <a> avec le nom du produit
+            // On crée une balise html de type <li> dans laquelle on va lui insérer une balise <a> avec le nom du produit
             const li = document.createElement('li')
             const price = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(products[i].price / 100)
             //On fait une concaténation pour y insérer une valeur dynamique (products[i])
