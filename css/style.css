@@ -12,20 +12,19 @@ img{
     height: auto;
      
 }
-button.card{
-    display: flex;
-    align-items: flex-start;
-}
+
 button.message{
     width: auto;
     height: auto;
 }
 .footer {
     background-color: antiquewhite;
-    height: 80px;
+    height: 40px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   /*Product cards */

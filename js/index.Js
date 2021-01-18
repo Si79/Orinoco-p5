@@ -24,6 +24,7 @@ xhr.onreadystatechange = function(){
                 <img src="${products[i].imageUrl}">
                 <div>${products[i].name}</div>
                 <div>${price}</div>
+                <div>${products[i].description}</div>
             </a>`
             // On ajout notre balise <li> à la balise <ul> précédemment créee
             ul.appendChild(li)

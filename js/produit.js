@@ -15,6 +15,7 @@ xhr.onreadystatechange = function(){
         
         titre.innerHTML = product.name
         image.setAttribute('src', product.imageUrl)
+        //titre.innerHTML = product.description
     }
 
 }
