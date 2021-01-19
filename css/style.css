@@ -6,6 +6,10 @@ header{
 }
 button{
     border-radius: 15px;
+    width: 300px;
+    height: 120x;
+    text-align: center;
+    margin-left: 650px;
 }
 img{
     width: 250px;
@@ -13,10 +17,6 @@ img{
      
 }
 
-button.message{
-    width: auto;
-    height: auto;
-}
 .footer {
     background-color: antiquewhite;
     height: 40px;
@@ -31,4 +31,7 @@ button.message{
   .product-card img{
       width: 200px;
       height: auto;
+  }
+  ul{
+      display: flex;
   }
