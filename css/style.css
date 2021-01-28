@@ -6,8 +6,7 @@ header{
 }
 button{
     border-radius: 15px;
-    width: 400px;
-    height: 320x;
+    height: 400x;
     text-align: center;
     margin-left: 650px;
 }
@@ -40,4 +39,10 @@ img{
   }
   div{
       list-style-type: none;
+  }
+  button#ajout-panier{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      width: 150px;
   }
