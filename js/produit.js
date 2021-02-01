@@ -8,6 +8,7 @@ const description = document.querySelector('#description')
 const image = document.querySelector('#image-produit')
 const couleurs = document.querySelector('#couleurs')
 
+
 //On appelle l'API pour récupérer les informations du produit
 /*const xhr = new XMLHttpRequest(); // Création d'un objet XMLHttpRequest
 xhr.open('GET', 'https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product'));
@@ -37,7 +38,7 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
     titre.innerHTML = product.name
     description.innerHTML = product.description
     image.setAttribute('src', product.imageUrl)
-
+    
     for(let i = 0; i < product.colors.length; i++){
         const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
         console.log(option)
@@ -47,7 +48,11 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
     // Ajouter un évènement au click sur le bouton pour permettre l'ajout du produit dans le localStorage
     const panierBouton = document.querySelector('#ajout-panier'); // On récupère un node element
     panierBouton.addEventListener('click', function(){
-        localStorage.setItem('panier', JSON.stringify(product)) // Obligation de stocker une chaine de caractère dans la valeur du localStorage
+        //localStorage.setItem('panier', JSON.stringify(product)) // Obligation de stocker une chaine de caractère dans la valeur du localStorage
         // TODO: Prochaine problématique: Avoir une structure appropriée pour ajouter plusieurs produits au panier
+           // - Récuperer le contenu du localStorage: Soit il y a déjà des produits dans le panier, soit il indéfini (undefined)
+           // - Utiliser JSON.parse (inverse du JSON.stringify) pour "décoder" la chaine de caractère en tableau
+           // - Ajouter le produit (product) dans le tableau
+           // - Mettre à jour le panier avec ce nouveau tableau dans le localStorage
     })
 })

@@ -47,10 +47,10 @@ get('https://oc-p5-api.herokuapp.com/api/teddies').then(products => {
         //On fait une concaténation pour y insérer une valeur dynamique (products[i])
         //li.innerHTML = '<a href="produit.html">' + products[i] + '</a>';
         li.innerHTML = `<a href="produit.html?product=${products[i]._id}" class="product-card">
-            <img src="${products[i].imageUrl}">
+            <button><img src="${products[i].imageUrl}">
             <div>${products[i].name}</div>
             <div>${price}</div>
-            <div>${products[i].description}</div>
+            <div>${products[i].description}</div></button>
         </a>`
         // On ajout notre balise <li> à la balise <ul> précédemment créee
         ul.appendChild(li)

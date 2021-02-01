@@ -8,14 +8,29 @@ button{
     border-radius: 15px;
     height: 400x;
     text-align: center;
-    margin-left: 650px;
+    width: 500px;
+    
 }
+/*button#ajout-panier{
+
+}*/
 img{
     width: 250px;
-    height: auto;
-     
-}
+    height: auto; 
 
+}
+#image-produit{
+    width: 400px;
+    height: 300px;
+    margin: 0;
+}
+.zoom {
+    overflow: hidden;
+    display: block;
+    width:300px;
+    }
+    #image-produit{transition: 0,5s;}
+    #image-produit:hover{transform: scale(1.2);}
 .footer {
     background-color: antiquewhite;
     height: 40px;
@@ -32,10 +47,14 @@ img{
       height: auto;
   }
   ul{
-      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
   }
   li{
       list-style-type: none;
+      padding-top: 5px;
+      justify-content: center;
   }
   div{
       list-style-type: none;

@@ -1,0 +1,1 @@
+// TODO: Récupérer le tableau du localStorage pour afficher le détail des produits qui y sont stockés
