@@ -44,11 +44,10 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
         console.log(option)
         couleurs.innerHTML += option;
     }
-
     // Ajouter un évènement au click sur le bouton pour permettre l'ajout du produit dans le localStorage
-    const panierBouton = document.querySelector('#ajout-panier'); // On récupère un node element
-    panierBouton.addEventListener('click', function(){
-        //localStorage.setItem('panier', JSON.stringify(product)) // Obligation de stocker une chaine de caractère dans la valeur du localStorage
+        const panierBouton = document.querySelector('#ajout-panier'); // On récupère un node element
+        panierBouton.addEventListener('click', function(){
+        localStorage.setItem('panier', JSON.stringify(product)) // Obligation de stocker une chaine de caractère dans la valeur du localStorage
         // TODO: Prochaine problématique: Avoir une structure appropriée pour ajouter plusieurs produits au panier
            // - Récuperer le contenu du localStorage: Soit il y a déjà des produits dans le panier, soit il indéfini (undefined)
            // - Utiliser JSON.parse (inverse du JSON.stringify) pour "décoder" la chaine de caractère en tableau
