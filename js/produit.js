@@ -43,15 +43,28 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
         const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
         console.log(option)
         couleurs.innerHTML += option;
+        let panierButtun = document.querySelector('#ajout-panier');
+
+    panierButtun.addEventListener('click', function(event){
+        
+    
+    let panier =JSON.parse(localStorage.getItem('panier'));
+    console.log(panier)
+
+
+    const selectColor = document.querySelector('#couleurs')
+    product.color = selectColor.value
+
+    if (panier === null) {
+        let panier = [];
+
+        panier.push(product);
+        localStorage.setItem('panier', JSON.stringify(panier))
+        console.log(localStorage);
+    } else {
+        panier.push(product);
+        localStorage.setItem('panier', JSON.stringify(panier))
     }
-    // Ajouter un évènement au click sur le bouton pour permettre l'ajout du produit dans le localStorage
-        const panierBouton = document.querySelector('#ajout-panier'); // On récupère un node element
-        panierBouton.addEventListener('click', function(){
-        localStorage.setItem('panier', JSON.stringify(product)) // Obligation de stocker une chaine de caractère dans la valeur du localStorage
-        // TODO: Prochaine problématique: Avoir une structure appropriée pour ajouter plusieurs produits au panier
-           // - Récuperer le contenu du localStorage: Soit il y a déjà des produits dans le panier, soit il indéfini (undefined)
-           // - Utiliser JSON.parse (inverse du JSON.stringify) pour "décoder" la chaine de caractère en tableau
-           // - Ajouter le produit (product) dans le tableau
-           // - Mettre à jour le panier avec ce nouveau tableau dans le localStorage
     })
+    }
 })
