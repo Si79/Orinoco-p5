@@ -60,7 +60,7 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
 
         panier.push(product);
         localStorage.setItem('panier', JSON.stringify(panier))
-        console.log(localStorage);
+        //console.log(localStorage);
     } else {
         panier.push(product);
         localStorage.setItem('panier', JSON.stringify(panier))
