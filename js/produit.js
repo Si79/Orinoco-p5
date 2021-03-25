@@ -7,6 +7,7 @@ const titre = document.querySelector('#title')
 const description = document.querySelector('#description')
 const image = document.querySelector('#image-produit')
 const couleurs = document.querySelector('#couleurs')
+const price = document.querySelector('#price')
 
 
 //On appelle l'API pour récupérer les informations du produit
@@ -41,7 +42,7 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
     
     for(let i = 0; i < product.colors.length; i++){
         const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
-        console.log(option)
+        //console.log(option)
         couleurs.innerHTML += option;
         let panierButtun = document.querySelector('#ajout-panier');
 
@@ -54,6 +55,9 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
 
     const selectColor = document.querySelector('#couleurs')
     product.color = selectColor.value
+    const selectorPrice = document.querySelector('#price')
+    product.price = selectorPrice.value
+
 
     if (panier === null) {
         let panier = [];

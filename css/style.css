@@ -1,6 +1,8 @@
 h1{
-    color: red;
     margin-left: 600px;
+}
+h1#title{
+    margin: auto;
 }
 li {
     list-style: none;
