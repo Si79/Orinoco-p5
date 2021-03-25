@@ -1,3 +1,15 @@
+body{
+    background-color:#dee2d550 ;
+}
+nav{
+    position: sticky;
+    top: 0;
+}
+#product-select
+{
+    display: flex;
+    align-items: flex-start;
+}
 h1{
     margin-left: 600px;
 }
@@ -15,6 +27,7 @@ header{
     height: 15px;
 }*/
 button{
+    background-color: white;
     width: 600px;
     height: 250px;
     border-radius: 15px;

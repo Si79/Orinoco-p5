@@ -13,6 +13,7 @@ if (produitsAjoutPanier !== null) {
       "</td><td><img src=" +
       produitsAjoutPanier[i].imageUrl +
       " width=100px></td></tr>";
+
       //prix, couleur
   }
   sectionPanier.appendChild(table);
