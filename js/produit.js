@@ -7,7 +7,6 @@ const titre = document.querySelector('#title')
 const description = document.querySelector('#description')
 const image = document.querySelector('#image-produit')
 const couleurs = document.querySelector('#couleurs')
-const price = document.querySelector('#price')
 
 
 //On appelle l'API pour récupérer les informations du produit
@@ -53,10 +52,10 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
     console.log(panier)
 
 
-    const selectColor = document.querySelector('#couleurs')
-    product.color = selectColor.value
-    const selectorPrice = document.querySelector('#price')
-    product.price = selectorPrice.value
+    //const selectColor = document.querySelector('#couleurs')
+    //product.color = selectColor.value
+    //const selectorPrice = document.querySelector('#price')
+    //product.price = selectorPrice.value
 
 
     if (panier === null) {
