@@ -12,7 +12,9 @@ if (produitsAjoutPanier !== null) {
       produitsAjoutPanier[i].name +
       "</td><td><img src=" +
       produitsAjoutPanier[i].imageUrl +
-      " width=100px></td></tr>";
+      " width=100px>" +
+      produitsAjoutPanier[i].price
+      "</td></tr>"; 
 
       //prix, couleur
   }
