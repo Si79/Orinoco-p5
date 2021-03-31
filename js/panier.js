@@ -9,12 +9,15 @@ if (produitsAjoutPanier !== null) {
   for (let i in produitsAjoutPanier) {
     table.innerHTML +=
       "<tr><td>" +
-      produitsAjoutPanier[i].name +
       "</td><td><img src=" +
       produitsAjoutPanier[i].imageUrl +
       " width=100px>" +
-      produitsAjoutPanier[i].price
-      "</td></tr>"; 
+      produitsAjoutPanier[i].name +
+      produitsAjoutPanier[i].colors +
+      produitsAjoutPanier[i].price +
+      "</td></tr>";
+      
+      
 
       //prix, couleur
   }

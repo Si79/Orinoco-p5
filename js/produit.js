@@ -41,7 +41,7 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
     
     for(let i = 0; i < product.colors.length; i++){
         const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
-        //console.log(option)
+        
         couleurs.innerHTML += option;
         
         let panierButtun = document.querySelector('#ajout-panier');
@@ -50,7 +50,7 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
         
     
     let panier =JSON.parse(localStorage.getItem('panier'));
-    console.log(panier)
+    //console.log(panier)
 
 
     //const selectColor = document.querySelector('#couleurs')
