@@ -44,20 +44,14 @@ get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')
         
         couleurs.innerHTML += option;
         
+        
         let panierButtun = document.querySelector('#ajout-panier');
 
     panierButtun.addEventListener('click', function(event){
         
     
     let panier =JSON.parse(localStorage.getItem('panier'));
-    //console.log(panier)
-
-
-    //const selectColor = document.querySelector('#couleurs')
-    //product.color = selectColor.value
-    //const selectorPrice = document.querySelector('#price')
-    //product.price = selectorPrice.value
-
+   
 
     if (panier === null) {
         let panier = [];
