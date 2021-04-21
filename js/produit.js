@@ -1,68 +1,45 @@
 // On récupère les paramètres de l'url
-const url = window.location.search
+const url = window.location.search;
 var searchParams = new URLSearchParams(url);
 
 // ON récupère les éléments HTML
-const titre = document.querySelector('#title')
-const description = document.querySelector('#description')
-const image = document.querySelector('#image-produit')
-const couleurs = document.querySelector('#couleurs')
+const titre = document.querySelector("#title");
+const description = document.querySelector("#description");
+const image = document.querySelector("#image-produit");
+const couleurs = document.querySelector("#couleurs");
+const price = document.querySelector("#price");
+get(
+  "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
+).then((product) => {
+  titre.innerHTML = product.name;
+  description.innerHTML = product.description;
+  image.setAttribute("src", product.imageUrl);
 
+  for (let i = 0; i < product.colors.length; i++) {
+    const option =
+      '<option value="' +
+      product.colors[i] +
+      '">' +
+      product.colors[i] +
+      "</option>";
 
-//On appelle l'API pour récupérer les informations du produit
-/*const xhr = new XMLHttpRequest(); // Création d'un objet XMLHttpRequest
-xhr.open('GET', 'https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product'));
-xhr.send();
+    couleurs.innerHTML += option;
 
-xhr.onreadystatechange = function(){
-    if(xhr.status === 200 && xhr.readyState === 4){ //On s'assure que la requete est terminée et que la réponse est disponible
-        const product = JSON.parse(xhr.responseText) // On stock dans la variable products les produits récupérés de l'API
-        
-        titre.innerHTML = product.name
-        description.innerHTML = product.description
-        image.setAttribute('src', product.imageUrl)
+    let panierButtun = document.querySelector("#ajout-panier");
 
-        for(let i = 0; i < product.colors.length; i++){
-            const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
-            console.log(option)
-            couleurs.innerHTML += option;
-        }
+    panierButtun.addEventListener("click", function (event) {
+      let panier = JSON.parse(localStorage.getItem("panier"));
 
-
-        // Ajouter un évènement au click sur le bouton pour permettre l'ajout du produit dans le localStorage
-    
-    }
-
-}*/
-get('https://oc-p5-api.herokuapp.com/api/teddies/' + searchParams.get('product')).then(product => {
-    titre.innerHTML = product.name
-    description.innerHTML = product.description
-    image.setAttribute('src', product.imageUrl)
-    
-    for(let i = 0; i < product.colors.length; i++){
-        const option = '<option value="' + product.colors[i] + '">' + product.colors[i] + '</option>'
-        
-        couleurs.innerHTML += option;
-        
-        
-        let panierButtun = document.querySelector('#ajout-panier');
-
-    panierButtun.addEventListener('click', function(event){
-        
-    
-    let panier =JSON.parse(localStorage.getItem('panier'));
-   
-
-    if (panier === null) {
+      if (panier === null) {
         let panier = [];
 
         panier.push(product);
-        localStorage.setItem('panier', JSON.stringify(panier))
+        localStorage.setItem("panier", JSON.stringify(panier));
         //console.log(localStorage);
-    } else {
+      } else {
         panier.push(product);
-        localStorage.setItem('panier', JSON.stringify(panier))
-    }
-    })
-    }
-})
+        localStorage.setItem("panier", JSON.stringify(panier));
+      }
+    });
+  }
+});

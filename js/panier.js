@@ -13,14 +13,18 @@ if (produitsAjoutPanier !== null) {
       produitsAjoutPanier[i].name +
       "</td><td><img src=" +
       produitsAjoutPanier[i].imageUrl +
-      " width=100px></td></tr>";
+      " width=100px></td></tr>"
+      "<td></td>"
+      produitsAjoutPanier[i].price
+      produitsAjoutPanier[i].color;
       //prix, couleur
   }
   sectionPanier.appendChild(table);
 }
 document.body.appendChild(sectionPanier);
 //ajouter le total (somme de l'ens des produits du panier)
-
 //Perspectives: supprimer un elt du panier
+let buttonDelete = document.createElement("bouton-supprimer");
+console.log('bouton-supprimer')
 //formulaire en dessous du panier
 
