@@ -71,12 +71,12 @@ fetch('https://oc-p5-api.herokuapp.com/api/teddies')
         const li = document.createElement('li')
         const price = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(products[i].price / 100)
         //On fait une concaténation pour y insérer une valeur dynamique (products[i])
-        li.innerHTML = '<a href="produit.html">' + products[i] + '</a>';
+        //li.innerHTML = '<a href="produit.html">' + products[i] + '</a>';
         li.innerHTML = `<a href="produit.html?product=${products[i]._id}" class="product-card">
-            <button><img src="${products[i].imageUrl}">
+            <img src="${products[i].imageUrl}">
             <div>${products[i].name}</div>
             <div>${price}</div>
-            <div>${products[i].description}</div></button>
+            <div>${products[i].description}</div>
         </a>`
         // On ajout notre balise <li> à la balise <ul> précédemment créee
         ul.appendChild(li)
