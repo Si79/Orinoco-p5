@@ -19,14 +19,18 @@ if (produitsAjoutPanier !== null) {
           <button>Supprimer le produit</button>
         </td>
       </tr>`
-    //prix, couleur
   }
+
+  
   sectionPanier.appendChild(table);
 }
+
+
 
 /**
  * 1. Permettre la suppression des produits du panier
  *  - Ajouter un évènment sur les boutons "Supprimer le produit"
+ * 
  *  - Au click, supprimer les produits du localStorage et du HTML (supprimer la ligne du panier)
  * 
  * 2. Permettre la suppression de tous les produits

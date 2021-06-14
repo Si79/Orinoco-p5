@@ -7,7 +7,6 @@ const titre = document.querySelector("#title");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image-produit");
 const couleurs = document.querySelector("#couleurs");
-const price = document.querySelector("#price");
 get(
   "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
 ).then((product) => {
