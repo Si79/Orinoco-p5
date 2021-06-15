@@ -16,20 +16,33 @@ if (produitsAjoutPanier !== null) {
         <td>${produitsAjoutPanier[i].color}</td>
         <td>${produitsAjoutPanier[i].price / 100}€</td>
         <td>
-          <button>Supprimer le produit</button>
+          <button class="delete-product" data-index="${i}"> Supprimer </button>
         </td>
       </tr>`
   }
 
+
+
+ let buttonSupprimer = document.createElement('button');
+ buttonSupprimer.textContent = ("Supprimer");
+
+ buttonSupprimer.addEventListener('click', function(event) {
+
+ })
+
+ console.log("Supprimer");
   
   sectionPanier.appendChild(table);
+
+  
 }
 
 
 
 /**
- * 1. Permettre la suppression des produits du panier
- *  - Ajouter un évènment sur les boutons "Supprimer le produit"
+ * 1. Permettre la suppression des produits du panier*/
+
+ /*  - Ajouter un évènment sur les boutons "Supprimer le produit"
  * 
  *  - Au click, supprimer les produits du localStorage et du HTML (supprimer la ligne du panier)
  * 
@@ -37,11 +50,35 @@ if (produitsAjoutPanier !== null) {
  */
 
 document.body.appendChild(sectionPanier);
+
+// Récupération de tous les boutons supprimer sous forme de tableau
+let deleteProducts = document.querySelectorAll('.delete-product')
+
+// On fait une boucle sur tous les boutons
+deleteProducts.forEach(function(deleteProduct){
+  //Sur chaque bouton, on ajoute un evenement au click
+  deleteProduct.addEventListener('click', function(event){
+    //Au click sur chaque bouton, on retire le produit du panier
+    const newProducts = produitsAjoutPanier.filter(function(produit, index){
+      return index != event.target.dataset['index'] 
+    })
+    // On écrase le panier du localStorage avec le nouveau
+    localStorage.setItem('panier',JSON.stringify(newProducts))
+    // On rafraichit la page pour que les changements soient pris en compte
+    window.location.reload();
+  })
+})
+
+let buttonDelete = document.createElement("button");
+buttonDelete.textContent = 'Vide le panier'
+document.body.appendChild(buttonDelete);
+buttonDelete.addEventListener('click', function(){
+  localStorage.removeItem('panier')
+  window.location.reload();
+})
+
 //ajouter le total (somme de l'ens des produits du panier)
 //Perspectives: supprimer un elt du panier
 //let buttonDelete = document.createElement("bouton-supprimer");
 //console.log("bouton-supprimer");
-const btn_tous_supprimer_panier_html = `
-<button class="btn-tous-supprimer-panier> vider le panier </button>
-`; 
 //formulaire en dessous du panier
