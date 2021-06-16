@@ -30,7 +30,7 @@ if (produitsAjoutPanier !== null) {
 
  })
 
- console.log("Supprimer");
+ //console.log("Supprimer");
   
   sectionPanier.appendChild(table);
 
@@ -76,6 +76,27 @@ buttonDelete.addEventListener('click', function(){
   localStorage.removeItem('panier')
   window.location.reload();
 })
+
+
+let divTitreFormulaire = document.createElement('div');
+divTitreFormulaire.id = "titreFormulaire";
+
+//console.log('div');
+
+let titreFormulaire =document.createElement('h2');
+titreFormulaire.textContent = 'Enregistrez vos coordonnées';
+
+//console.log('Enregistrez vos coordonnées')
+
+let sectionFormulaire = document.createElement('section');
+
+sectionFormulaire.id = "sectionFrormulaire";
+
+//console.log("sectionFormulaire")
+
+let divFormulaire = document.createElement('div');
+divFormulaire.innerHTML
+
 
 //ajouter le total (somme de l'ens des produits du panier)
 //Perspectives: supprimer un elt du panier
