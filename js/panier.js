@@ -83,7 +83,7 @@ divTitreFormulaire.id = "titreFormulaire";
 
 //console.log('div');
 
-let titreFormulaire =document.createElement('h2');
+let titreFormulaire = document.createElement('h2');
 titreFormulaire.textContent = 'Enregistrez vos coordonnées';
 
 //console.log('Enregistrez vos coordonnées')
@@ -95,7 +95,31 @@ sectionFormulaire.id = "sectionFrormulaire";
 //console.log("sectionFormulaire")
 
 let divFormulaire = document.createElement('div');
-divFormulaire.innerHTML
+divFormulaire.innerHTML = 
+<form action="" method="get" class="form-example">
+<div class="form-example">
+  <label for="lastName">Nom : </label>
+  <input type="text" name="lastName" id="lastName" class='infoRequired' required placeholder='LY...'></input>
+</div>
+<div class=" form-example">
+  <label for="firstName">Prénom : </label>
+  <input type="text" name="firstName" id="firstName" class='infoRequired' required placeholder='Siré...'></input>
+  </div>
+  <div class="form-example">
+    <label for="Adresse">Adresse : </label>
+    <input type="text" name="Adresse" id="Adresse" class='infoRequired' required placeholder='5 rue du 30e Régiment...'></input>
+  </div>
+  <div class="form-example">
+  <label for="address">Ville : </label>
+  <input type="text" name="ville" id="ville" classe='infoRequired' required placeholder='Orléans...'></input>
+  </div>
+  <div class="form-example">
+    <label for="email">E-mail : </label>
+    <input type="text" name="email" id="email" class='infoReaquired' required placeholder='leveilleur@yahoo.fr...'></input>
+  </div>
+
+</form>
+
 
 
 //ajouter le total (somme de l'ens des produits du panier)
