@@ -76,49 +76,52 @@ buttonDelete.addEventListener('click', function(){
   localStorage.removeItem('panier')
   window.location.reload();
 })
-
-
-let divTitreFormulaire = document.createElement('div');
-divTitreFormulaire.id = "titreFormulaire";
-
-//console.log('div');
-
-let titreFormulaire = document.createElement('h2');
-titreFormulaire.textContent = 'Enregistrez vos coordonnées';
-
-//console.log('Enregistrez vos coordonnées')
-
-let sectionFormulaire = document.createElement('section');
-
-sectionFormulaire.id = "sectionFrormulaire";
-
-//console.log("sectionFormulaire")
-
-let divFormulaire = document.createElement('div');
-divFormulaire.innerHTML = 
-<form action="" method="get" class="form-example">
-<div class="form-example">
-  <label for="lastName">Nom : </label>
-  <input type="text" name="lastName" id="lastName" class='infoRequired' required placeholder='LY...'></input>
+/*let divTitleForm = document.createElement('div');
+let divTitleForm = "divTitleForm";
+let titleForm = document.createElement('h2');
+titleForm.id ='placeOrder';
+titleForm.textContent = "Faites vos achats...";
+let sectionForm = document.createElement('section');
+sectionForm.id ="sectionForm";
+let divForm = document.createElement('div');
+*/
+let formContact = document.createElement("Formulaire");
+formContact.textContent = 'formulaire de contact';
+formContact.innerHTML =  `<form action='mon_formulaire' method='post' id='form1'>
+<div class='monNom'>
+<label for="monNom"> Nom : </label>
+<input type="text" id="nom" class='infoRequired required placeholder='LY'>
 </div>
-<div class=" form-example">
-  <label for="firstName">Prénom : </label>
-  <input type="text" name="firstName" id="firstName" class='infoRequired' required placeholder='Siré...'></input>
-  </div>
-  <div class="form-example">
-    <label for="Adresse">Adresse : </label>
-    <input type="text" name="Adresse" id="Adresse" class='infoRequired' required placeholder='5 rue du 30e Régiment...'></input>
-  </div>
-  <div class="form-example">
-  <label for="address">Ville : </label>
-  <input type="text" name="ville" id="ville" classe='infoRequired' required placeholder='Orléans...'></input>
-  </div>
-  <div class="form-example">
-    <label for="email">E-mail : </label>
-    <input type="text" name="email" id="email" class='infoReaquired' required placeholder='leveilleur@yahoo.fr...'></input>
-  </div>
 
-</form>
+<div class='monPrenom'>
+<label for="prenom"> Prénom : </label>
+<input type="text" id="prenom" class='infoRequired required placeholder='Siré'>
+</div>
+
+<div class='adresse'>
+<label for="adresse"> Adresse : </label>
+<input type="text" id="adresse" class='infoRequired required placeholder='Siré'>
+</div>
+
+<div class='ville'>
+<label for="ville"> Orléans : </label>
+<input type="text" id="ville" class='infoRequired required placeholder='Orléans'>
+</div>
+
+<div class='Code Postale'>
+<label for="codePostale"> 45000 : </label>
+<input type="text" id="adresse" class='infoRequired required placeholder='45000'>
+</div>
+
+<div class='email'>
+<label for="email"> Email : </label>
+<input type="text" id="email" class='infoRequired required placeholder='leveilleur79@gmail.com'>
+</div>
+
+<div class='button_valider'>
+<input type="button" id='btn-submit' value="Validez votre commande !>
+</div>
+</form>`;
 
 
 
