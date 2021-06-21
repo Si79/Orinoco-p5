@@ -45,6 +45,6 @@ get(
       localStorage.setItem("panier", JSON.stringify(panier));
     }
 
-    alert('Produit ajouté au panier');
+    alert('Voulez-vous ajouter ce produit au panier');
   });
 });

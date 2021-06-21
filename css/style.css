@@ -66,13 +66,13 @@ img#logo{
     border-color: black;
     margin-left: 250px;
 }
-/*.zoom {
+.zoom {
     overflow: hidden;
     display: block;
     width:300px;
     }
     #image-produit{transition: 0,5s;}
-    #image-produit:hover{transform: scale(1.2);}*/
+    #image-produit:hover{transform: scale(1.2);}
     
     
 .footer {
@@ -113,6 +113,8 @@ img#logo{
       background-color: gray; 
       padding: 20px;
       border-radius: 5px;
+      width: 400px;
+      height: 200px;
   }
 
   table {
@@ -124,3 +126,11 @@ img#logo{
   table td {
       border: 1px solid black;
   }
+
+  /*...RESPONSIVE...*/
+  @media screen and (min-width: 577px) {
+    .header {
+      flex-direction: row;
+      height: 6em;
+        }
+    }
