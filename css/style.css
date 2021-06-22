@@ -1,5 +1,6 @@
 body{
     background-color:#dee2d550 ;
+
 }
 nav{
     position: sticky;
@@ -8,7 +9,7 @@ nav{
 section#product-select
 {
     display: flex;
-    flex-wrap: wrap;
+    
     justify-content: center;
     align-items: center;
 }
@@ -128,9 +129,6 @@ img#logo{
   }
 
   /*...RESPONSIVE...*/
-  @media screen and (min-width: 577px) {
-    .header {
-      flex-direction: row;
-      height: 6em;
-        }
-    }
+  @media  screen  {
+      
+  }

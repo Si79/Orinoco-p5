@@ -33,9 +33,7 @@ if (produitsAjoutPanier !== null) {
 
   sectionPanier.appendChild(table);
 
-
 }
-
 
 document.body.appendChild(sectionPanier);
 
@@ -68,15 +66,30 @@ buttonDelete.addEventListener('click', function () {
   window.location.reload();
 });
 
-let formContact = document.createElement('h2')
-//console.log('h2')
-formContact.textContent ="Formulaire";
+let form = document.querySelector('#Formulaire')
+form.addEventListener('submit', function(event){
+  event.preventDefault()
 
-let inputs = document.getElementById("Formulaire").getElementsByTagName("input");
+  const data = {
+    contact: {
+      firstName: event.target.first_name.value,
+      lastName:  event.target.last_name.value,
+      address:  event.target.address.value,
+      city: event.target.city.value,
+      email:  event.target.email.value
+    },
+    products: ["5be9c8541c9d440000665243"]
+  }
 
-document.getElementById("Formulaire").addEventListener("btn-submit", function() {
-  alert('Merci votre commande a  été validée !')
-  console.log('alert')
-  let inputs = document.getElementsByTagName("input");
-
-});
+  fetch('https://oc-p5-api.herokuapp.com/api/teddies/order', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json())
+  .then(res => {
+    window.location.href = 'confirmation.html?orderId=' + res.orderId
+  })
+  
+})
