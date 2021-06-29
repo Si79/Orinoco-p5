@@ -32,6 +32,8 @@ get(
   panierButtun.addEventListener("click", function (event) {
     let panier = JSON.parse(localStorage.getItem("panier"));
     let color = document.querySelector('#couleurs').value
+    let buttonQuantity = document.querySelector('#buttonQuantity');
+    //console.log('#buttonQuantity')
 
     product.color = color;
     if (panier === null) {
@@ -45,6 +47,6 @@ get(
       localStorage.setItem("panier", JSON.stringify(panier));
     }
 
-    alert('Voulez-vous ajouter ce produit au panier');
+    alert('Voulez-vous ajouter ce produit au panier ?');
   });
 });

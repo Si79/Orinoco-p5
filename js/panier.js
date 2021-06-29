@@ -1,5 +1,14 @@
 let produitsAjoutPanier = JSON.parse(localStorage.getItem("panier"));
 
+function getTotalCart(){
+  let sum = 0;
+  for(let i = 0; i < produitsAjoutPanier.length; i++){
+    sum += produitsAjoutPanier[i].price
+  }
+  return sum;
+
+}
+
 let sectionPanier = document.createElement("section");
 
 if (produitsAjoutPanier !== null) {
@@ -66,6 +75,7 @@ buttonDelete.addEventListener('click', function () {
   window.location.reload();
 });
 
+
 let form = document.querySelector('#Formulaire')
 form.addEventListener('submit', function(event){
   event.preventDefault()
@@ -89,7 +99,9 @@ form.addEventListener('submit', function(event){
     body: JSON.stringify(data)
   }).then(res => res.json())
   .then(res => {
-    window.location.href = 'confirmation.html?orderId=' + res.orderId
+    const name = data.contact.firstName + ' ' + data.contact.lastName
+    const total = getTotalCart();
+    window.location.href = 'confirmation.html?orderId=' + res.orderId + '&name=' + name + '&total=' + total
   })
   
 })
