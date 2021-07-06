@@ -7,6 +7,7 @@ const titre = document.querySelector("#title");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image-produit");
 const couleurs = document.querySelector("#couleurs");
+
 get(
   "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
 ).then((product) => {
@@ -33,7 +34,6 @@ get(
     let panier = JSON.parse(localStorage.getItem("panier"));
     let color = document.querySelector('#couleurs').value
     let buttonQuantity = document.querySelector('#buttonQuantity');
-    //console.log('#buttonQuantity')
 
     product.color = color;
     if (panier === null) {
@@ -41,7 +41,6 @@ get(
 
       panier.push(product);
       localStorage.setItem("panier", JSON.stringify(panier));
-      //console.log(localStorage);
     } else {
       panier.push(product);
       localStorage.setItem("panier", JSON.stringify(panier));

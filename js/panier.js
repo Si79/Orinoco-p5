@@ -1,4 +1,4 @@
-let produitsAjoutPanier = JSON.parse(localStorage.getItem("panier"));
+let produitsAjoutPanier = JSON.parse(localStorage.getItem("panier")) || [];
 
 function getTotalCart(){
   let sum = 0;
@@ -9,10 +9,9 @@ function getTotalCart(){
 
 }
 
-let sectionPanier = document.createElement("section");
+let sectionPanier = document.querySelector("#panier");
 
 if (produitsAjoutPanier !== null) {
-  sectionPanier.id = "sectionWithProduits";
 
   let table = document.createElement("table");
   for (let i in produitsAjoutPanier) {
@@ -31,20 +30,9 @@ if (produitsAjoutPanier !== null) {
   }
 
 
-  let buttonSupprimer = document.createElement('button');
-  buttonSupprimer.textContent = ("Supprimer");
-
-  buttonSupprimer.addEventListener('click', function (event) {
-
-  });
-
-  //console.log("Supprimer");
-
   sectionPanier.appendChild(table);
 
 }
-
-document.body.appendChild(sectionPanier);
 
 // Récupération de tous les boutons supprimer sous forme de tableau
 let deleteProducts = document.querySelectorAll('.delete-product')
@@ -66,17 +54,26 @@ deleteProducts.forEach(function (deleteProduct) {
   })
 })
 
-let buttonDelete = document.createElement("button");
-buttonDelete.textContent = 'Vider le panier'
-document.body.appendChild(buttonDelete);
-buttonDelete.addEventListener('click', function () {
-  alert('Produit supprimé !')
-  localStorage.removeItem('panier')
-  window.location.reload();
-});
-
-
 let form = document.querySelector('#Formulaire')
+
+if(produitsAjoutPanier.length > 0){
+  let buttonDelete = document.createElement("button");
+  buttonDelete.textContent = 'Vider le panier'
+  sectionPanier.appendChild(buttonDelete);
+  buttonDelete.addEventListener('click', function () {
+    alert('Produit supprimé !')
+    localStorage.removeItem('panier')
+    window.location.reload();
+  });
+
+  form.style.display = 'block';
+} else {
+  sectionPanier.innerHTML = "<h2>Panier vide</h2>"
+}
+
+
+
+
 form.addEventListener('submit', function(event){
   event.preventDefault()
 
@@ -101,7 +98,9 @@ form.addEventListener('submit', function(event){
   .then(res => {
     const name = data.contact.firstName + ' ' + data.contact.lastName
     const total = getTotalCart();
+    localStorage.setItem('panier', JSON.stringify([]));
     window.location.href = 'confirmation.html?orderId=' + res.orderId + '&name=' + name + '&total=' + total
   })
   
 })
+

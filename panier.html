@@ -18,16 +18,17 @@
           </header>
       </div>
     </nav>
-    <h1 id ="mon choix" ><button>Mon Panier</button></h1>
+
+    <section id="panier"></section>
+
 <!---FORMULAIRE DE CONTACT-->
-<h2 id="Formulaire de contact">
       <form id="Formulaire">
         <div class='lastName'>
-        <input type="text" name="last_name" required placeholder='Nom en lettres capitales' id="Nom">
+        <input type="text" name="last_name" required placeholder='Nom en lettres capitales' id="Nom" pattern="^([^0-9]*)$">
         </div>
         
         <div class='firstName'>
-        <input type="text" name="first_name" required placeholder= 'Prenom' id="Prénom">
+        <input type="text" name="first_name" required placeholder= 'Prenom' id="Prénom" pattern="^([^0-9]*)$">
         </div>
         
         <div class='adresse'>
@@ -43,14 +44,13 @@
         </div>
         
         <div class='email'>
-        <input type="text" name="email" placeholder='leveilleur79@gmail.com' id="email">
+        <input type="email" name="email" placeholder='leveilleur79@gmail.com' id="email" required>
         </div>
         
         <div class='button_valider'>
         <button type="submit" id='btn-submit'>Validez votre commande</button>
         </div>
         </form>
-</h2> 
 
       <!--FOOTER-->
     <footer>

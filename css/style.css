@@ -1,6 +1,5 @@
 body{
-    background-color:#dee2d550 ;
-
+    background-color:#90bd2750 ;
 }
 nav{
     position: sticky;
@@ -126,6 +125,14 @@ img#logo{
 
   table td {
       border: 1px solid black;
+  }
+
+  #panier {
+      margin: 20px 0;
+  }
+
+  #Formulaire {
+      display: none;
   }
 
   /*...RESPONSIVE...*/
