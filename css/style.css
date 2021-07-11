@@ -8,9 +8,11 @@ nav{
 section#product-select
 {
     display: flex;
-    
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
+    margin-right: 100px;
+    
 }
 h1{
     margin-left: 600px;
@@ -29,14 +31,14 @@ header{
     height: 15px;
 }*/
 
-.product-card{
+a.product-card{
     display: block;
     text-decoration: none;
     color: black;
     padding: 20px;
     background-color: white;
     width: 600px;
-    height: 250px;
+    height: 200px;
     border-radius: 15px;
     text-align: center;
     border-width: 1px;
@@ -136,6 +138,19 @@ img#logo{
   }
 
   /*...RESPONSIVE...*/
-  @media  screen  {
-      
+  @media  screen  and (max-width:500px){
+    section#product-select{
+        display: flex;
+        flex-direction: column;
+    } 
+    div#nom.product-infos{
+        width: auto;
+    }
   }
+  @media screen and (max-width: 557px) {
+      .footer{
+          display: flex;
+          flex-direction: row;
+      }
+  }
+ 

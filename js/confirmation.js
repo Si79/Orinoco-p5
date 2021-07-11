@@ -9,5 +9,5 @@ var searchParams = new URLSearchParams(url);
 
 name.textContent = searchParams.get('name')
 orderId.textContent = searchParams.get('orderId')
-total.textContent = parseInt(searchParams.get('total'))/100
+total.textContent = parseInt(searchParams.get('total')) / 100
 

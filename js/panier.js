@@ -1,8 +1,8 @@
 let produitsAjoutPanier = JSON.parse(localStorage.getItem("panier")) || [];
 
-function getTotalCart(){
+function getTotalCart() {
   let sum = 0;
-  for(let i = 0; i < produitsAjoutPanier.length; i++){
+  for (let i = 0; i < produitsAjoutPanier.length; i++) {
     sum += produitsAjoutPanier[i].price
   }
   return sum;
@@ -28,7 +28,6 @@ if (produitsAjoutPanier !== null) {
         </td>
       </tr>`
   }
-
 
   sectionPanier.appendChild(table);
 
@@ -56,11 +55,12 @@ deleteProducts.forEach(function (deleteProduct) {
 
 let form = document.querySelector('#Formulaire')
 
-if(produitsAjoutPanier.length > 0){
+if (produitsAjoutPanier.length > 0) {
   let buttonDelete = document.createElement("button");
   buttonDelete.textContent = 'Vider le panier'
   sectionPanier.appendChild(buttonDelete);
   buttonDelete.addEventListener('click', function () {
+    
     alert('Produit supprimé !')
     localStorage.removeItem('panier')
     window.location.reload();
@@ -71,19 +71,16 @@ if(produitsAjoutPanier.length > 0){
   sectionPanier.innerHTML = "<h2>Panier vide</h2>"
 }
 
-
-
-
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function (event) {
   event.preventDefault()
 
   const data = {
     contact: {
       firstName: event.target.first_name.value,
-      lastName:  event.target.last_name.value,
-      address:  event.target.address.value,
+      lastName: event.target.last_name.value,
+      address: event.target.address.value,
       city: event.target.city.value,
-      email:  event.target.email.value
+      email: event.target.email.value
     },
     products: ["5be9c8541c9d440000665243"]
   }
@@ -95,12 +92,12 @@ form.addEventListener('submit', function(event){
     },
     body: JSON.stringify(data)
   }).then(res => res.json())
-  .then(res => {
-    const name = data.contact.firstName + ' ' + data.contact.lastName
-    const total = getTotalCart();
-    localStorage.setItem('panier', JSON.stringify([]));
-    window.location.href = 'confirmation.html?orderId=' + res.orderId + '&name=' + name + '&total=' + total
-  })
-  
+    .then(res => {
+      const name = data.contact.firstName + ' ' + data.contact.lastName
+      const total = getTotalCart();
+      localStorage.setItem('panier', JSON.stringify([]));
+      window.location.href = 'confirmation.html?orderId=' + res.orderId + '&name=' + name + '&total=' + total
+    })
+
 })
 
