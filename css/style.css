@@ -38,7 +38,7 @@ a.product-card{
     padding: 20px;
     background-color: white;
     width: 600px;
-    height: 200px;
+    height: 210px;
     border-radius: 15px;
     text-align: center;
     border-width: 1px;
@@ -138,7 +138,13 @@ img#logo{
   }
 
   /*...RESPONSIVE...*/
-  @media  screen  and (max-width:500px){
+  @media  screen  and (max-width:358px){
+      .header, footer{
+          flex-basis: 100%;
+          margin: 0;
+          margin-right: 0;
+          margin-left: 0;
+      }
     section#product-select{
         display: flex;
         flex-direction: column;
