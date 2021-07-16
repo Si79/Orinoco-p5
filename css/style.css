@@ -20,9 +20,7 @@ h1{
 h1#title{
     margin: auto;
 }
-li {
-    list-style: none;
-}
+
 header{
     background-color: antiquewhite;
 }
@@ -56,8 +54,8 @@ a.product-card{
 img#logo{
     width: 200px;
     height: auto; 
-
 }
+
 #image-produit{
     width: 300px;
     height: 250px;
@@ -91,6 +89,7 @@ img#logo{
   .product-card img{
       width: 200px;
       height: auto;
+      border-style: dashed;
   }
   ul{
       flex-direction: column;
@@ -111,7 +110,7 @@ img#logo{
       border-radius: 85px;
   }
 
-  .product-infos {
+  .product-infos{
       background-color: gray; 
       padding: 20px;
       border-radius: 5px;
@@ -120,9 +119,10 @@ img#logo{
   }
 
   table {
-      width: 100%;
+      width: 50%;
       table-layout: fixed;
       border-collapse: collapse;
+
   }
 
   table td {
@@ -135,9 +135,15 @@ img#logo{
 
   #Formulaire {
       display: none;
+      border: 1em;
+  }
+  input{
+      width: 40%;
+      height: 20px;
+      margin: 2px;
   }
 
-  /*...RESPONSIVE...*/
+  /*...RESPONSIVE...
   @media  screen  and (max-width:358px){
       .header, footer{
           flex-basis: 100%;
@@ -158,5 +164,50 @@ img#logo{
           display: flex;
           flex-direction: row;
       }
-  }
+  }*/
+  @media screen and (max-width: 768px){
+    .header, footer
+    {
+        flex-basis: 100%;
+        margin: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .wrapper{
+        flex-basis: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .main{
+        flex-basis: auto;
+    }
+    .carte{
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    .img, h3{
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    header, footer{
+        width: auto;
+    }
+}
+@media screen and (min-width:770px) and (max-width:1024px){
+    header, footer{
+        width: auto;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1400px){
+    header, footer{
+       width: auto;
+   }
+}
+@media screen and (min-width:1401px) and (max-width:1600px){
+        header, footer{
+        width: auto;
+    }
+} 
  

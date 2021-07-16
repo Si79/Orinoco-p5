@@ -14,8 +14,7 @@ function getTotalCart() {
 }
 
 function displayCart(){
- 
-  
+   
   if (produitsAjoutPanier.length > 0) {
 
     let table = document.createElement("table");
@@ -74,7 +73,7 @@ function deleteProductAction(){
 }
 
 function deleteAllProducts(){
-  alert('Produit supprimé !')
+  alert('Voulez-vous vider votre panier ?')
   localStorage.removeItem('panier')
   window.location.reload();
 }

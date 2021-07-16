@@ -2,7 +2,7 @@
 const url = window.location.search;
 var searchParams = new URLSearchParams(url);
 
-function displayProduct(product){
+function displayProduct(product) {
   // ON récupère les éléments HTML
   const titre = document.querySelector("#title");
   const description = document.querySelector("#description");
@@ -25,29 +25,27 @@ function displayProduct(product){
   }
 }
 
-function addProductToCart(product){
+function addProductToCart(product) {
   let panier = JSON.parse(localStorage.getItem("panier"));
-    let color = document.querySelector('#couleurs').value
+  let color = document.querySelector('#couleurs').value
 
-    product.color = color;
-    if (panier === null) {
-      let panier = [];
+  product.color = color;
+  if (panier === null) {
+    let panier = [];
 
-      panier.push(product);
-      localStorage.setItem("panier", JSON.stringify(panier));
-    } else {
-      panier.push(product);
-      localStorage.setItem("panier", JSON.stringify(panier));
-    }
-    alert('Voulez-vous ajouter ce produit au panier ?');
+    panier.push(product);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  } else {
+    panier.push(product);
+    localStorage.setItem("panier", JSON.stringify(panier));
+  }
+  alert('Voulez-vous ajouter ce produit au panier ?');
 }
-
-
 
 get(
   "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
 ).then((product) => {
-  
+
 
   displayProduct(product)
 
@@ -55,6 +53,6 @@ get(
 
   panierButtun.addEventListener("click", function () {
     addProductToCart(product);
-    
+
   });
 });
