@@ -1,9 +1,9 @@
-// On récupère les paramètres de l'url
+// je récupère les paramètres de l'url
 const url = window.location.search;
 var searchParams = new URLSearchParams(url);
 
+// Affichage du produit récupéré
 function displayProduct(product) {
-  // ON récupère les éléments HTML
   const titre = document.querySelector("#title");
   const description = document.querySelector("#description");
   const image = document.querySelector("#image-produit");
@@ -41,7 +41,7 @@ function addProductToCart(product) {
   }
   alert('Voulez-vous ajouter ce produit au panier ?');
 }
-
+//récupération des infos du produit grâce aux paramètres de l'url searchParams(url)
 get(
   "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
 ).then((product) => {

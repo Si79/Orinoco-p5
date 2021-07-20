@@ -15,12 +15,17 @@ section#product-select
     
 }
 h1{
-    margin-left: 600px;
+    text-align: center;
 }
 h1#title{
     margin: auto;
 }
-
+.section, h2{
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+    font-size: xx-large;
+}
 header{
     background-color: antiquewhite;
 }
@@ -102,7 +107,7 @@ img#logo{
       padding-top: 5px;
       justify-content: center;
   }
-  div{
+  div.produit{
       list-style-type: none;
   }
   button#ajout-panier{
@@ -140,74 +145,99 @@ img#logo{
   input{
       width: 40%;
       height: 20px;
-      margin: 2px;
+      margin-top: 2px;
+      padding: 5px;
   }
-
-  /*...RESPONSIVE...
-  @media  screen  and (max-width:358px){
-      .header, footer{
+  button#btn-submit{
+     background-color: black;
+     margin-top: 5px;
+     color:whitesmoke;
+     padding: 5px;
+  }
+  
+  @media screen and (max-width:768px){
+    
+      header, footer
+      {
           flex-basis: 100%;
+      }
+      div.produit{
+          width: 100%;
+      }
+      a.product-card{
+    text-decoration: none;
+    color: black;
+    border-radius: 15px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: auto;
+    margin-top: 0;
+      }
+      ul.lien_produit{
           margin: 0;
-          margin-right: 0;
-          margin-left: 0;
+          padding: 0;
       }
-    section#product-select{
-        display: flex;
-        flex-direction: column;
-    } 
-    div#nom.product-infos{
-        width: auto;
-    }
-  }
-  @media screen and (max-width: 557px) {
-      .footer{
-          display: flex;
-          flex-direction: row;
-      }
-  }*/
-  @media screen and (max-width: 768px){
-    .header, footer
-    {
-        flex-basis: 100%;
+
+     section#product-select{
+         flex-wrap: wrap;
+         margin: 10px;
+
+     } 
+     img#image-produit{
+        width: 250px;
+        height: 250px;
         margin: 0;
-        margin-right: 0;
-        margin-left: 0;
+        margin-top: 5px;
+        border-width: 1px;
+        border-radius: 15px;
+        border-style: solid;
+        border-color: black;    
     }
-    .wrapper{
-        flex-basis: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .main{
-        flex-basis: auto;
-    }
-    .carte{
-        display: block;
-        width: auto;
-        height: auto;
-    }
-    .img, h3{
-        display: none;
-    }
-}
+    
+  }
 @media screen and (min-width: 769px) and (max-width: 1024px){
+    body{
+        background-color: aqua;
+    }
+    .h1{
+        text-align: center;
+    }
+    a.product-card{
+        text-decoration: none;
+        color: black;
+        border-radius: 15px;
+        text-align: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
+        width: auto;
+        margin-top: 0;
+          }
+          ul.lien_produit{
+              margin: 0;
+              padding: 0;
+          }
     header, footer{
         width: auto;
     }
 }
-@media screen and (min-width:770px) and (max-width:1024px){
+/*@media screen and (min-width:770px) and (max-width:1024px){
     header, footer{
-        width: auto;
+        flex-basis: 100%;
     }
 }
+
 @media screen and (min-width:1025px) and (max-width:1400px){
     header, footer{
-       width: auto;
+       flex-basis: 100%;
    }
 }
+
 @media screen and (min-width:1401px) and (max-width:1600px){
-        header, footer{
-        width: auto;
+    header, footer{
+        flex-basis: 100%;
     }
-} 
+}
  

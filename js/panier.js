@@ -56,7 +56,7 @@ function displayCart(){
     form.style.display = 'block';
 
   } else {
-    sectionPanier.innerHTML = "<h2>Panier vide</h2>"
+    sectionPanier.innerHTML = "<h2>Panier vide !!!</h2>"
   }
 }
 
@@ -89,7 +89,7 @@ form.addEventListener('submit', function (event) {
       city: event.target.city.value,
       email: event.target.email.value
     },
-    products: ["5be9c8541c9d440000665243"]
+    products: produitsAjoutPanier.map((produit) => produit._id) // Transformer le tableau de produits en un tableau d'id
   }
 
   fetch('https://oc-p5-api.herokuapp.com/api/teddies/order', {
@@ -107,7 +107,6 @@ form.addEventListener('submit', function (event) {
     })
 
 })
-
 
 displayCart()
 

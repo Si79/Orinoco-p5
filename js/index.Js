@@ -18,7 +18,6 @@ function displayProducts(products){
     }
 }
 
-
 fetch('https://oc-p5-api.herokuapp.com/api/teddies')
     .then(res => res.json())
     .then(products => {
