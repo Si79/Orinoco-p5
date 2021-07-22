@@ -71,14 +71,7 @@ img#logo{
     border-color: black;
     margin-left: 250px;
 }
-.zoom {
-    overflow: hidden;
-    display: block;
-    width:300px;
-    }
-    #image-produit{transition: 0,5s;}
-    #image-produit:hover{transform: scale(1.2);}
-    
+
     
 .footer {
     background-color: antiquewhite;
@@ -147,6 +140,7 @@ img#logo{
       height: 20px;
       margin-top: 2px;
       padding: 5px;
+      border-radius: 1px;
   }
   button#btn-submit{
      background-color: black;
@@ -223,21 +217,3 @@ img#logo{
         width: auto;
     }
 }
-/*@media screen and (min-width:770px) and (max-width:1024px){
-    header, footer{
-        flex-basis: 100%;
-    }
-}
-
-@media screen and (min-width:1025px) and (max-width:1400px){
-    header, footer{
-       flex-basis: 100%;
-   }
-}
-
-@media screen and (min-width:1401px) and (max-width:1600px){
-    header, footer{
-        flex-basis: 100%;
-    }
-}
- 
