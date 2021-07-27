@@ -4,7 +4,7 @@ function displayProducts(products){
     for (let i = 0; i < products.length; i++) {
 
         const li = document.createElement('li')
-        const price = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(products[i].price / 100)
+        const price = Utils.convertCentimesToEuros(products[i].price);
 
 
         li.innerHTML = `<a href="produit.html?product=${products[i]._id}" class="product-card">

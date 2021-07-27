@@ -45,6 +45,7 @@ function addProductToCart(product) {
 get(
   "https://oc-p5-api.herokuapp.com/api/teddies/" + searchParams.get("product")
 ).then((product) => {
+  // Cas du resolve
 
 
   displayProduct(product)
@@ -55,4 +56,7 @@ get(
     addProductToCart(product);
 
   });
+}, () => {
+  //Cas du reject de la promesse
+  alert('Erreur dans la requête');
 });
